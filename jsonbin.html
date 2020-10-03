@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functional</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.css" />
+
+</head>
+
+<body>
+
+    <p id="demo"></p>
+    <script>
+        var tMenu = `<b>Morning</b>`;
+        var tName = `muhaza ${tMenu}`;
+
+        function bacaData() {
+            let req = new XMLHttpRequest();
+            req.onreadystatechange = () => {
+                if (req.readyState == XMLHttpRequest.DONE) {
+                    // document.write(req.responseText);
+                    var mydata = JSON.parse(req.responseText);
+                    // -------- this array test success !for targeted data ------------//
+                    // document.getElementById("demo").innerHTML = mydata[2].title + ", " + mydata[2].description;
+
+                    // -------- this array test success = display latest data ------------//
+                    // for (var i = 0; i < mydata.length; i++) {
+                    //     var obj = mydata[i];
+                    //     document.getElementById("demo").innerHTML = mydata[i].description;
+                    // }
+
+                    //----------------- this display 1 data only !Latest one ------------------//
+                    // for (var key in mydata) {
+                    //     if (mydata.hasOwnProperty(key)) {
+                    //         console.log(mydata[key].title);
+                    //         console.log(mydata[key].description);
+                    //         document.getElementById("demo").innerHTML = mydata[key].title + mydata[key].description;
+                    //     }
+                    // }
+
+                    //------ done! this is the json object array render -----//
+                    // for (var i = 0; i < mydata.length; i++) {
+                    //     // document.write("<br>array index: " + i);
+                    //     var obj = mydata[i];
+                    //     for (var key in obj) {
+                    //         var value = obj[key];
+                    //         document.write("<br> " + key + " " + value);
+
+                    //     }
+                    // }
+                    //---more! not done ---//
+                    for (var i = 0; i < mydata.length; i++) {
+                        document.getElementById('demo')[i].innerHTML = mydata[i].title;
+                    }
+                }
+            };
+
+            req.open("GET", "https://api.jsonbin.io/b/5cbd5e941f6d9a5478cf4dd0", true);
+            req.setRequestHeader("secret-key", "$2a$10$nwXlQ0LISfBSjGzlFXKrvO6FrJy/aMsBYGvlD0nx7yNYZKH76ugVi");
+            req.send();
+        }
+
+        bacaData();
+    </script>
+
+    <div id="app" class="container my-5">
+        <div class="alert alert-dark" role="alert" onclick="solution()">
+            Coronavirus 2019- Its a pendemic!!
+        </div>
+    </div>
+
+    <button onclick="bacaData()">Baca Data</button>
+    <div id="dataKeluar"></div>
+
+    <script>
+        var vaksin = document.querySelector.bind(document);
+
+        function solution() {
+            var pmKe8 = `
+            <div class="alert alert-warning" role="alert" onclick="ok()">
+            PM-8: Just Stay At Home
+            </div>`;
+
+            vaksin("#app").innerHTML = pmKe8;
+        }
+
+        function ok() {
+            var rakyatDegil = `
+            <div class="alert alert-danger" role="alert" onclick="solution()">
+            Rakyat Degil: Taknak! Taknak! Taknak!
+            </div>`;
+
+            vaksin("#app").innerHTML = rakyatDegil;
+        }
+    </script>
+</body>
+
+</html>

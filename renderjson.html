@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="test"></div>
+    <script type="text/javascript" src="renderjson.js"></script>
+    <script>
+        document.getElementById("test").appendChild(
+            renderjson({
+                hello: [1, 2, 3, 4],
+                there: {
+                    a: 1,
+                    b: 2,
+                    c: ["hello", null]
+                }
+            })
+        );
+    </script>
+</body>
+
+</html>
