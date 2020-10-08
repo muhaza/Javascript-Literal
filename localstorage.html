@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="qweInputed" value=""><button onclick="qweclick()">Save Me</button>
+    <button onclick="qweRemove()">Remove</button>
+    <script>
+        function qweclick() {
+            var getInput = document.getElementById("qweInputed").value;
+            alert(getInput + " success");
+            localStorage.qweStorage = getInput;
+        }
+
+        function qweRemove() {
+            alert("remove succeed");
+            delete localStorage.qweStorage;
+        }
+    </script>
+</body>
+
+</html>
