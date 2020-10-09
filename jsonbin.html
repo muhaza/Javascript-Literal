@@ -41,19 +41,19 @@
                     // }
 
                     //------ done! this is the json object array render -----//
-                    // for (var i = 0; i < mydata.length; i++) {
-                    //     // document.write("<br>array index: " + i);
-                    //     var obj = mydata[i];
-                    //     for (var key in obj) {
-                    //         var value = obj[key];
-                    //         document.write("<br> " + key + " " + value);
-
-                    //     }
-                    // }
-                    //---more! not done ---//
                     for (var i = 0; i < mydata.length; i++) {
-                        document.getElementById('demo')[i].innerHTML = mydata[i].title;
+                        // document.write("<br>array index: " + i);
+                        var obj = mydata[i];
+                        for (var key in obj) {
+                            var value = obj[key];
+                            document.write("<br> " + key + " " + value);
+
+                        }
                     }
+                    //---more! not done ---//
+                    // for (var i = 0; i < mydata.length; i++) {
+                    //     document.getElementById('demo')[i].innerHTML = mydata[i].title;
+                    // }
                 }
             };
 
