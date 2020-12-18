@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Very QWEX!</title>
+    <script src="qwe.bind.js"></script>
+    <script>
+        //functions
+        function FqweClick() {
+            if (onclick) {
+                qwe("hello").innerHTML = `<hello onclick="
+            FqweClick2()
+            ">Hik</hello>`;
+            } else {
+                return 'hello';
+            }
+
+        }
+
+        var el = document.querySelector('.toggle-me');
+
+        el.onclick = function() {
+            console.log('clicked!');
+        }
+    </script>
+</head>
+
+<body>
+    <style>
+        hello {
+            color: blue;
+        }
+    </style>
+    <hello onclick="FqweClick()">qwe</hello>
+
+    <script>
+        var helloqwe = `Very qwe! var? `;
+        var whyqwe = `nothing it just qwe!`;
+        // qwe("hello").innerHTML = helloqwe + whyqwe;
+    </script>
+</body>
+
+
+</html>
