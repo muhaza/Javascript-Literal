@@ -1,1 +1,0 @@
-var literalapp = `hello world ${Dname}`;
