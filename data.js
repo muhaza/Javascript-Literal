@@ -1,1 +1,1 @@
-var Dname = "hafiz";
+var Dname = "SIMPLE DATA";
